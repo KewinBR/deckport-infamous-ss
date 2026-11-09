@@ -70,8 +70,8 @@ TEXTOS = {
     "atualizando_texto": ("Baixando a versão {} do Deckport. O jogo abre logo em seguida.",
                           "Downloading Deckport version {}. The game starts right after."),
     "o_que_mudou": ("O QUE MUDOU", "WHAT'S NEW"),
-    "notas_completas": ("Notas completas: github.com/KewinBR/infamous-second-son-steamdeck",
-                        "Full notes: github.com/KewinBR/infamous-second-son-steamdeck"),
+    "notas_completas": ("Notas completas: github.com/KewinBR/deckport-infamous-ss",
+                        "Full notes: github.com/KewinBR/deckport-infamous-ss"),
 }
 
 

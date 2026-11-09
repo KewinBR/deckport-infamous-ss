@@ -21,7 +21,7 @@ sys.path.insert(0, str(APP / "instalador"))
 import nucleo  # noqa: E402
 from textos import T, idioma_inicial  # noqa: E402
 
-REPO = "KewinBR/infamous-second-son-steamdeck"
+REPO = "KewinBR/deckport-infamous-ss"
 API = f"https://api.github.com/repos/{REPO}/releases/latest"
 
 

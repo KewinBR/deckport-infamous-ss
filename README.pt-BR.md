@@ -116,7 +116,7 @@ nada: é surpresa.
 1. Copie os `.pkg` para o Deck: para a pasta **Downloads** ou para o **cartão microSD** (qualquer pasta). Pelo PC,
    dá para usar um pen drive, o cartão SD ou o Warpinator.
 2. No Deck, segure o botão de ligar e escolha **Mudar para a Área de Trabalho** (Modo Desktop).
-3. Abra o navegador, entre na página de [releases](https://github.com/KewinBR/infamous-second-son-steamdeck/releases/latest)
+3. Abra o navegador, entre na página de [releases](https://github.com/KewinBR/deckport-infamous-ss/releases/latest)
    e baixe o arquivo **`Instalar-inFAMOUS.desktop`**.
 4. Na pasta Downloads, toque duas vezes nele (se o sistema perguntar, escolha **Continuar/Executar**).
 5. O instalador abre em tela cheia. Use o toque ou o controle (direcional, **A** confirma, **B** volta):
@@ -128,7 +128,7 @@ nada: é surpresa.
 Prefere o Konsole? Uma linha faz o mesmo que os passos 3 e 4:
 
 ```bash
-curl -L https://github.com/KewinBR/infamous-second-son-steamdeck/releases/latest/download/instalar.sh | bash
+curl -L https://github.com/KewinBR/deckport-infamous-ss/releases/latest/download/instalar.sh | bash
 ```
 
 <p align="center">
@@ -181,7 +181,7 @@ Steam.
 
 - O registro de cada abertura fica em `~/.local/share/infamous-ss-deck/logs/ultimo.log`.
 - O do instalador, em `~/.config/infamous-ss-deck/instalador.log`.
-- Abra uma [issue](https://github.com/KewinBR/infamous-second-son-steamdeck/issues) com o registro e o que
+- Abra uma [issue](https://github.com/KewinBR/deckport-infamous-ss/issues) com o registro e o que
   aconteceu.
 
 ## Créditos

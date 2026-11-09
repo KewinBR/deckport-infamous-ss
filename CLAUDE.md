@@ -44,6 +44,9 @@ iniciador com atualização automática, README em português e inglês, crédit
    (regra 2), o título na Steam ("inFAMOUS Second Son", regra 10 do `steam-deck/CLAUDE.md`) e os nomes internos
    (`~/.config/infamous-ss-deck`, `~/.local/share/infamous-ss-deck`, pacote `infamous-ss-deck-vX.Y.Z.tar.gz`), que
    ficam como estão pra não quebrar as instalações e o iniciador de quem já tem o port.
+   Repositório: `KewinBR/deckport-infamous-ss` (renomeado em 2026-11-09; o "ss" separa dos dois primeiros inFAMOUS).
+   O GitHub redireciona o nome antigo, então iniciadores antigos seguem atualizando: nunca criar repo com o nome
+   `infamous-second-son-steamdeck`.
 
 ## Easter eggs (grafites do minigame de spray)
 

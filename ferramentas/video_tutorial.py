@@ -124,7 +124,7 @@ def tela_navegador(sel=False):
     d = ImageDraw.Draw(img)
     d.rectangle([0, 0, 1280, 70], fill=(225, 228, 233))
     d.rounded_rectangle([120, 16, 1160, 54], 19, fill=(255, 255, 255))
-    d.text((150, 25), "github.com/KewinBR/infamous-second-son-steamdeck/releases", font=REG(20), fill=(60, 60, 70))
+    d.text((150, 25), "github.com/KewinBR/deckport-infamous-ss/releases", font=REG(20), fill=(60, 60, 70))
     lg = Image.open(ARTE / "logo-horizontal.png").convert("RGBA")
     lg = lg.resize((300, int(lg.height * 300 / lg.width)))
     escuro = Image.new("RGB", (1280, 150), (18, 18, 20))
@@ -288,7 +288,7 @@ def fim(frames, n):
         img = fundo_geral().convert("RGBA")
         img.alpha_composite(lg, ((W - lg.width) // 2, 110))
         d = ImageDraw.Draw(img)
-        d.text((W // 2, 680), "github.com/KewinBR/infamous-second-son-steamdeck", font=MED(40), fill=AM, anchor="ma")
+        d.text((W // 2, 680), "github.com/KewinBR/deckport-infamous-ss", font=MED(40), fill=AM, anchor="ma")
         d.text((W // 2, 760), t("fim_sub"), font=REG(32), fill=(205, 203, 196), anchor="ma")
         frames.append(img.convert("RGB"))
 

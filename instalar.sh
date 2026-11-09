@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # Instalador do Deckport do inFAMOUS Second Son, para o Modo Desktop do Steam Deck.
 # Baixa a ultima release (port + instalador, uns 100 MB; nada do jogo) e abre o instalador.
-# Pelo Konsole:  curl -L https://github.com/KewinBR/infamous-second-son-steamdeck/releases/latest/download/instalar.sh | bash
+# Pelo Konsole:  curl -L https://github.com/KewinBR/deckport-infamous-ss/releases/latest/download/instalar.sh | bash
 set -euo pipefail
-repo=KewinBR/infamous-second-son-steamdeck
+repo=KewinBR/deckport-infamous-ss
 dest=$HOME/.local/share/infamous-ss-deck-instalador
 mkdir -p "$dest"
 url=$(curl -fsSL "https://api.github.com/repos/$repo/releases/latest" |
