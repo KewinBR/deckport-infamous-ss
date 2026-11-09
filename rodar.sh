@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# inFAMOUS Second Son - Steamdeck Version: abre o jogo pelo port nativo (chamado pelo iniciador.py, que antes busca
+# Deckport do inFAMOUS Second Son: abre o jogo pelo port nativo (chamado pelo iniciador.py, que antes busca
 # atualizacoes). Caminhos no ~/.config/infamous-ss-deck/config.json (gravado pelo instalador): "port" (o pacote do
 # port) e "jogo" (o jogo extraido, 1.07). Saves, cache de shaders e opcoes ficam em ~/.local/share/infamous-ss-deck/
 # user: atualizar o port nunca mexe neles.
@@ -98,7 +98,7 @@ fi
 [[ -f /usr/lib/libtcmalloc_minimal.so.4 ]] && controle+=(LD_PRELOAD=/usr/lib/libtcmalloc_minimal.so.4)
 export TLG_VBLANK_HZ=0 TLG_DRAW_PIPE=0 TLG_GLYPHS=xbox TLG_SUBMIT_DRAWS=256 TLG_REPEAT_BIND=1
 case ${LANG:-}${LC_ALL:-} in pt*) export TLG_UI_LANG=pt_BR ;; *) export TLG_UI_LANG=en_US ;; esac
-# Menu do port e tela de abertura: fontes livres (OFL) e o logo Steamdeck Version.
+# Menu do port e tela de abertura: fontes livres (OFL) e o logo com o selo STEAMDECK VERSION.
 export TLG_MENU_FONT=$app/instalador/fontes/Barlow-Medium.ttf TLG_MENU_FONT_BOLD=$app/instalador/fontes/ISSDeckStencil.ttf
 export TLG_LOADING_ART=$app/arte/delsin-steamdeck.png TLG_LOADING_LOGO=$app/arte/logo-vertical.png
 # Texturas trocadas pelo port: o Deck no lugar do controle do PS4 (minigame do spray e tela de controles).

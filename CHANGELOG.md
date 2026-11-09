@@ -2,6 +2,26 @@
 
 Formato: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/), versões em [SemVer](https://semver.org/lang/pt-BR/).
 
+## [Não publicado]
+
+### Mudado
+- O port agora se chama **Deckport** (marca de todos os ports do Kewin para o Steam Deck): instalador, tela de
+  atualização, menu do port (aba Sobre e selo do menu), atalho do instalador e README. O iss_pc de HayatoG e o
+  shadPS4 aparecem nos créditos. O logo segue com o selo STEAMDECK VERSION e o título na Steam segue
+  "inFAMOUS Second Son".
+
+Notas da release (rascunho):
+
+```
+**Português**
+- O port agora se chama Deckport: instalador, menu do View e tela de atualização com o nome novo.
+- O iss_pc de HayatoG e o shadPS4 seguem nos créditos (aba Sobre, instalador e README).
+
+**English**
+- The port is now called Deckport: installer, View menu and update screen show the new name.
+- HayatoG's iss_pc and shadPS4 stay in the credits (About tab, installer and README).
+```
+
 ## [1.0.5] - 2026-10-24
 
 ### Adicionado

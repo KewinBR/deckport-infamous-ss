@@ -1,4 +1,4 @@
-"""Atalho do jogo na biblioteca da Steam (jogo fora da Steam), com as artes do Steamdeck Version.
+"""Atalho do jogo na biblioteca da Steam (jogo fora da Steam), com as artes do Deckport (logo com o selo STEAMDECK VERSION).
 
 A Steam reescreve o shortcuts.vdf enquanto esta aberta: fecha a Steam (steam -shutdown), grava o atalho e as artes
 (config/grid) e faz copia de seguranca do arquivo antes. No Modo de Jogo a sessao reabre a Steam sozinha; no Modo

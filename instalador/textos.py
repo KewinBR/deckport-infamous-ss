@@ -15,12 +15,12 @@ TEXTOS = {
     "continuar": ("CONTINUAR", "CONTINUE"),
     "instalar": ("INSTALAR", "INSTALL"),
     "outro_idioma": ("ENGLISH", "PORTUGUÊS"),
-    "inicio_texto": ("Instalador do port nativo para Steam Deck.\nVocê precisa da sua própria cópia do jogo de PS4 "
-                     "(CUSA00004 ou CUSA00223, versão 1.07). Nada do jogo é baixado.",
-                     "Installer for the native Steam Deck port.\nYou need your own copy of the PS4 game "
-                     "(CUSA00004 or CUSA00223, version 1.07). Nothing from the game is downloaded."),
-    "creditos_por": ("PORT PARA STEAM DECK POR", "STEAM DECK PORT BY"),
-    "creditos_base": ("sobre o iss_pc de HayatoG e o shadPS4", "built on HayatoG's iss_pc and shadPS4"),
+    "inicio_texto": ("Instalador do Deckport, o port nativo para Steam Deck.\nVocê precisa da sua própria "
+                     "cópia do jogo de PS4 (CUSA00004 ou CUSA00223, versão 1.07). Nada do jogo é baixado.",
+                     "Installer for Deckport, the native Steam Deck port.\nYou need your own copy of the "
+                     "PS4 game (CUSA00004 or CUSA00223, version 1.07). Nothing from the game is downloaded."),
+    "creditos_por": ("DECKPORT POR", "DECKPORT BY"),
+    "creditos_base": ("baseado no iss_pc de HayatoG e no shadPS4", "based on HayatoG's iss_pc and shadPS4"),
     "jogo_titulo": ("ONDE ESTÁ O JOGO?", "WHERE IS THE GAME?"),
     "jogo_achei": ("Achei estes arquivos no Deck e no cartão SD. Marque o jogo e a atualização 1.07.",
                    "I found these files on the Deck and the SD card. Check the game and the 1.07 update."),
@@ -44,7 +44,7 @@ TEXTOS = {
     "sem_espaco": ("Sem espaço: precisa de 32 GB livres", "Not enough space: needs 32 GB free"),
     "recomendado": ("RECOMENDADO", "RECOMMENDED"),
     "instalando_titulo": ("INSTALANDO", "INSTALLING"),
-    "etapa_port": ("Preparando o port", "Preparing the port"),
+    "etapa_port": ("Preparando o Deckport", "Preparing Deckport"),
     "etapa_base": ("Extraindo o jogo base", "Extracting the base game"),
     "etapa_update": ("Aplicando a atualização 1.07", "Applying the 1.07 update"),
     "etapa_preparar": ("Preparando as opções do Deck", "Preparing the Deck settings"),
@@ -57,8 +57,8 @@ TEXTOS = {
                      "e abra por lá. Na primeira abertura os shaders são preparados (alguns minutos, uma vez só).",
                      "inFAMOUS Second Son is in your Steam library, with cover art and icon.\nGo back to Game Mode "
                      "and launch it there. The first launch prepares the shaders (a few minutes, only once)."),
-    "pronto_menu": ("Menu do port durante o jogo: botão View (o de dois quadradinhos, à esquerda da tela).",
-                    "Port menu while playing: the View button (two small squares, left of the screen)."),
+    "pronto_menu": ("Menu do Deckport durante o jogo: botão View (o de dois quadradinhos, à esquerda da tela).",
+                    "Deckport menu while playing: the View button (two small squares, left of the screen)."),
     "modo_jogo": ("VOLTAR AO MODO DE JOGO", "BACK TO GAME MODE"),
     "erro_titulo": ("ALGO DEU ERRADO", "SOMETHING WENT WRONG"),
     "erro_texto": ("A instalação parou. Nada foi apagado: dá pra tentar de novo. Se repetir, abra uma issue no "
@@ -67,8 +67,8 @@ TEXTOS = {
                    "issue on GitHub with the file ~/.config/infamous-ss-deck/instalador.log."),
     "tentar_de_novo": ("TENTAR DE NOVO", "TRY AGAIN"),
     "atualizando": ("ATUALIZANDO", "UPDATING"),
-    "atualizando_texto": ("Baixando a versão {} do port. O jogo abre logo em seguida.",
-                          "Downloading version {} of the port. The game starts right after."),
+    "atualizando_texto": ("Baixando a versão {} do Deckport. O jogo abre logo em seguida.",
+                          "Downloading Deckport version {}. The game starts right after."),
     "o_que_mudou": ("O QUE MUDOU", "WHAT'S NEW"),
     "notas_completas": ("Notas completas: github.com/KewinBR/infamous-second-son-steamdeck",
                         "Full notes: github.com/KewinBR/infamous-second-son-steamdeck"),

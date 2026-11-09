@@ -1,4 +1,4 @@
-"""Instalador do inFAMOUS Second Son - Steamdeck Version (Tk, tela cheia 1280x800, toque e controle).
+"""Instalador do Deckport do inFAMOUS Second Son (Tk, tela cheia 1280x800, toque e controle).
 
     python3 instalador.py            # no Deck (Modo Desktop)
     DEMO=1 python3 instalador.py     # sem instalar nada: pacotes e progresso de mentira (previas)
@@ -59,7 +59,7 @@ class App:
     def __init__(self):
         registrar_fontes()
         self.root = tk.Tk()
-        self.root.title("inFAMOUS Second Son - Steamdeck Version")
+        self.root.title("Deckport: inFAMOUS Second Son")
         self.root.configure(bg="black")
         if sys.platform == "win32" or os.environ.get("JANELA") == "1":
             self.root.geometry(f"{W}x{H}+0+0")

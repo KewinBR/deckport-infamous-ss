@@ -1,4 +1,4 @@
-# inFAMOUS Second Son - Steamdeck Version
+# Deckport: inFAMOUS Second Son
 
 Repositório público (quando o Kewin liberar) do port nativo do inFAMOUS Second Son para Steam Deck: instalador,
 iniciador com atualização automática, README em português e inglês, créditos e aprendizados. O código do port
@@ -38,6 +38,12 @@ iniciador com atualização automática, README em português e inglês, crédit
    `TLG_MENU_TAB=n` abre o menu na aba n (0 Gráficos, 1 Controle, 2 Extras, 3 Sobre) e
    `TLG_SHOT_OVERLAY=1 TLG_SHOT_EVERY_S=1` grava prints com o menu por cima (`*_hud_*.png` em `user/gpu-2`). O
    `xdotool` não chega na janela dentro do gamescope e a captura do X sai preta.
+9. **Nome: Deckport** (Kewin, 2026-11-09; regra geral em `C:\Dev\_docs\ports-steamdeck.md`). O nome do produto em
+   tudo que a pessoa vê (instalador, iniciador, menu do port, README, notas de release) é **Deckport**. O iss_pc e o
+   shadPS4 só aparecem nos créditos (aba Sobre, instalador, README). Não muda: o logo com o selo STEAMDECK VERSION
+   (regra 2), o título na Steam ("inFAMOUS Second Son", regra 10 do `steam-deck/CLAUDE.md`) e os nomes internos
+   (`~/.config/infamous-ss-deck`, `~/.local/share/infamous-ss-deck`, pacote `infamous-ss-deck-vX.Y.Z.tar.gz`), que
+   ficam como estão pra não quebrar as instalações e o iniciador de quem já tem o port.
 
 ## Easter eggs (grafites do minigame de spray)
 

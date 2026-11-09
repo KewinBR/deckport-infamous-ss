@@ -55,7 +55,7 @@ TX = {
     "t8": ("JOGUE PELO MODO DE JOGO", "PLAY FROM GAME MODE"),
     "s8": ("Volte ao Modo de Jogo: o jogo está na biblioteca, com capa e ícone.",
            "Go back to Game Mode: the game is in your library, with cover art and icon."),
-    "fim_sub": ("Port para Steam Deck por Kewin Lima", "Steam Deck port by Kewin Lima"),
+    "fim_sub": ("Deckport por Kewin Lima", "Deckport by Kewin Lima"),
     "f_pasta": ("Cartão microSD  ›  ps4", "microSD card  ›  ps4"),
     "f_down": ("Downloads", "Downloads"),
     "m_susp": ("Suspender", "Sleep"), "m_rein": ("Reiniciar", "Restart"), "m_desl": ("Desligar", "Shut Down"),

@@ -1,10 +1,10 @@
-<p align="center"><img src="arte/logo-vertical.png" width="420" alt="inFAMOUS Second Son - Steamdeck Version"></p>
+<p align="center"><img src="arte/logo-vertical.png" width="420" alt="inFAMOUS Second Son, Deckport (STEAMDECK VERSION)"></p>
 
 <p align="center"><a href="README.pt-BR.md">Português</a> • <b>English</b></p>
 
-# inFAMOUS Second Son: Steamdeck Version
+# Deckport: inFAMOUS Second Son
 
-A native port of inFAMOUS Second Son (PS4) for the Steam Deck, with no emulator. It runs on HayatoG's
+**Deckport** is a native port of inFAMOUS Second Son (PS4) for the Steam Deck, with no emulator. It runs on HayatoG's
 [iss_pc](https://github.com/HayatoG/iss_pc) (a PC recompilation of the game, with renderer v2), plus the Deck work
 described below: performance, memory, controls, screens and an installer that needs no keyboard or mouse.
 
@@ -20,11 +20,11 @@ the installer only uses the `.pkg` files you already have.
 - Renderer v2 with memory tuned for the Deck's 16 GB: the game uses about 3.5 GB of RAM instead of 6, and the
   heaviest tested section (the neon race) went from 33 to 41 FPS on average.
 - Native 16:10 resolution of the Deck's screen, with videos cropped to 16:10.
-- The Deck's gyro in the graffiti minigame, the Steam button pauses the game (like the PS button), port menu on the
+- The Deck's gyro in the graffiti minigame, the Steam button pauses the game (like the PS button), Deckport menu on the
   View button.
 - Save and loading screens in the game's style, Deck A/B button glyphs.
 - Shader cache: each shader is compiled only once and kept.
-- Skip videos (experimental, off by default) and Easter Eggs (off by default): in the port menu, Extras tab.
+- Skip videos (experimental, off by default) and Easter Eggs (off by default): in the Deckport menu, Extras tab.
 - Automatic updates: before starting the game, the shortcut checks for a new version and updates by itself. Saves,
   shaders and settings are never deleted.
 
@@ -46,7 +46,7 @@ controller: Delsin shaking the Deck and the hands turning the Deck on its side.
 </p>
 <p align="center"><img src="docs/img/deck/spray-no-jogo.jpg" width="640" alt="The spray minigame in the game, with the new icon"></p>
 
-Without the gyro (or if you prefer), the port menu has a guide to do the graffiti with the sticks.
+Without the gyro (or if you prefer), the Deckport menu has a guide to do the graffiti with the sticks.
 
 ### Controls screen with the Deck
 
@@ -72,13 +72,13 @@ seconds; nothing from the game ships in the package). The generator is plain Pyt
 ### Startup screen
 
 While the shaders are prepared, a screen in the game's style, with the art of Delsin with the Steam Deck, the
-Steamdeck Version logo painted like spray, the progress bar and the time left.
+logo with the STEAMDECK VERSION seal painted like spray, the progress bar and the time left.
 
 <p align="center"><img src="docs/img/deck/tela-de-abertura.jpg" width="640" alt="Startup screen"></p>
 
 ### Skip videos (experimental)
 
-Turned on in Extras in the port menu: during a video, holding the menu button for 1 s skips the scene (a quick tap
+Turned on in Extras in the Deckport menu: during a video, holding the menu button for 1 s skips the scene (a quick tap
 still pauses). The screen stays covered with the Delsin art until the game is back, and the scene's audio is muted.
 
 <p align="center">
@@ -88,10 +88,10 @@ still pauses). The screen stays covered with the Delsin art until the game is ba
 
 ### Easter Eggs
 
-Off by default. Turn it on in Extras in the port menu and keep an eye on the walls you paint. We will not say
+Off by default. Turn it on in Extras in the Deckport menu and keep an eye on the walls you paint. We will not say
 more: it is a surprise.
 
-<p align="center"><img src="docs/img/deck/menu-extras.jpg" width="640" alt="Extras tab in the port menu (View button)"></p>
+<p align="center"><img src="docs/img/deck/menu-extras.jpg" width="640" alt="Extras tab in the Deckport menu (View button)"></p>
 
 ### And more
 
@@ -99,10 +99,10 @@ more: it is a surprise.
   Deck's controller directly and turns the gyro on by itself.
 - **Trackpads:** the left and right ones become the two halves of the PS4 touchpad (a firm press is a click).
 - **Steam button:** freezes the game while the Steam menu or the quick access menu is open, like the PS button.
-- **Port menu on the View button**, with graphics, performance, controls and Extras tabs, in the game's style.
+- **Deckport menu on the View button**, with graphics, performance, controls and Extras tabs, in the game's style.
 - **Save and load screens** redone in the game's style, with the Deck's A and B letters.
 - **16:10:** the Deck's screen resolution (1280x800) and videos cropped to 16:10.
-- **Steam library art:** cover, banner, background, logo and icon of the Steamdeck Version.
+- **Steam library art:** Deckport cover, banner, background, logo and icon.
 
 ## Requirements
 
@@ -162,7 +162,7 @@ The first one extracts the base game; the second applies the 1.07 update over it
 ## Playing
 
 - **First launch:** the loading screen prepares the shaders (a few minutes, only once).
-- **Port menu:** the **View** button (two small squares, left of the screen). Graphics, performance, controls and
+- **Deckport menu:** the **View** button (two small squares, left of the screen). Graphics, performance, controls and
   the Extras tab.
 - **Steam button:** pauses the game while the Steam menu is open.
 - **Skip videos:** turn it on in Extras > Skip videos (Experimental); during a video, hold the menu button for 1 s.
@@ -188,9 +188,9 @@ Steam shortcut.
 
 ## Credits
 
-**Steam Deck port:** Kewin Lima.
+**Deckport (Steam Deck port):** Kewin Lima.
 
-This work exists because of these projects (all GPL-2.0, like this one):
+Deckport is built on these projects (all GPL-2.0, like this one):
 
 - [iss_pc](https://github.com/HayatoG/iss_pc), by HayatoG (Guilherme): the native PC port of inFAMOUS Second Son,
   including renderer v2 ([PR #402](https://github.com/HayatoG/iss_pc/pull/402)). The base of everything here.

@@ -1,10 +1,10 @@
-<p align="center"><img src="arte/logo-vertical.png" width="420" alt="inFAMOUS Second Son - Steamdeck Version"></p>
+<p align="center"><img src="arte/logo-vertical.png" width="420" alt="inFAMOUS Second Son, Deckport (STEAMDECK VERSION)"></p>
 
 <p align="center"><b>Português</b> • <a href="README.md">English</a></p>
 
-# inFAMOUS Second Son: Steamdeck Version
+# Deckport: inFAMOUS Second Son
 
-Port nativo do inFAMOUS Second Son (PS4) para o Steam Deck, sem emulador. Ele roda a partir do
+O **Deckport** é o port nativo do inFAMOUS Second Son (PS4) para o Steam Deck, sem emulador. Ele roda a partir do
 [iss_pc](https://github.com/HayatoG/iss_pc) de HayatoG (recompilação do jogo para PC, com o renderer v2), com o
 trabalho específico do Deck descrito abaixo: desempenho, memória, controle, telas e um instalador que dispensa
 teclado e mouse.
@@ -20,10 +20,10 @@ baixado: o instalador só usa os `.pkg` que você já tem.
 - Renderer v2 com memória ajustada para os 16 GB do Deck: o jogo usa uns 3,5 GB de RAM em vez de 6, e o trecho mais
   pesado testado (a corrida de neon) foi de 33 para 41 FPS de média.
 - Resolução 16:10 nativa da tela do Deck, com os vídeos cortados para 16:10.
-- Giroscópio do Deck no minigame de grafite, botão Steam pausa o jogo (como o botão PS), menu do port no botão View.
+- Giroscópio do Deck no minigame de grafite, botão Steam pausa o jogo (como o botão PS), menu do Deckport no botão View.
 - Telas de salvar e de carregamento no estilo do jogo, letras A/B do Deck.
 - Cache de shaders: cada shader é compilado uma vez só e guardado.
-- Pular vídeos (experimental, desligado de fábrica) e Easter Eggs (desligado de fábrica): no menu do port, aba Extras.
+- Pular vídeos (experimental, desligado de fábrica) e Easter Eggs (desligado de fábrica): no menu do Deckport, aba Extras.
 - Atualização automática: antes de abrir o jogo, o atalho confere se saiu versão nova e atualiza sozinho. Saves,
   shaders e opções nunca são apagados.
 
@@ -45,7 +45,7 @@ Delsin chacoalhando o Deck e as mãos virando o Deck de lado.
 </p>
 <p align="center"><img src="docs/img/deck/spray-no-jogo.jpg" width="640" alt="O minigame do spray no jogo, com o ícone novo"></p>
 
-Sem giroscópio (ou para quem prefere), o menu do port tem um guia de como fazer o grafite com os analógicos.
+Sem giroscópio (ou para quem prefere), o menu do Deckport tem um guia de como fazer o grafite com os analógicos.
 
 ### Tela de controles com o Deck
 
@@ -70,13 +70,13 @@ nada do jogo vem no pacote). O gerador é Python puro, sem dependências: [deck/
 ### Tela de abertura
 
 Enquanto os shaders são preparados, uma tela no estilo do jogo, com a arte do Delsin com o Steam Deck, o logo
-Steamdeck Version pintado como spray, a barra de progresso e o tempo restante.
+com o selo STEAMDECK VERSION pintado como spray, a barra de progresso e o tempo restante.
 
 <p align="center"><img src="docs/img/deck/tela-de-abertura.jpg" width="640" alt="Tela de abertura"></p>
 
 ### Pular vídeos (experimental)
 
-Ligado em Extras no menu do port: durante um vídeo, segurar o botão de menu por 1 s pula a cena (um toque rápido
+Ligado em Extras no menu do Deckport: durante um vídeo, segurar o botão de menu por 1 s pula a cena (um toque rápido
 continua pausando). A tela fica coberta com a arte do Delsin até o jogo voltar, e o áudio da cena fica mudo.
 
 <p align="center">
@@ -86,10 +86,10 @@ continua pausando). A tela fica coberta com a arte do Delsin até o jogo voltar,
 
 ### Easter Eggs
 
-Vem desligado. Ligue em Extras no menu do port e preste atenção nos muros que você pintar. Não vamos contar mais
+Vem desligado. Ligue em Extras no menu do Deckport e preste atenção nos muros que você pintar. Não vamos contar mais
 nada: é surpresa.
 
-<p align="center"><img src="docs/img/deck/menu-extras.jpg" width="640" alt="Aba Extras no menu do port (botão View)"></p>
+<p align="center"><img src="docs/img/deck/menu-extras.jpg" width="640" alt="Aba Extras no menu do Deckport (botão View)"></p>
 
 ### E mais
 
@@ -97,10 +97,10 @@ nada: é surpresa.
   controle do Deck direto e liga o giroscópio sozinho.
 - **Trackpads:** o esquerdo e o direito viram as duas metades do touchpad do PS4 (clique firme = clique).
 - **Botão Steam:** congela o jogo enquanto o menu da Steam ou o menu rápido estiver aberto, como o botão PS.
-- **Menu do port no botão View**, com abas de gráficos, desempenho, controle e Extras, no estilo do jogo.
+- **Menu do Deckport no botão View**, com abas de gráficos, desempenho, controle e Extras, no estilo do jogo.
 - **Telas de salvar e carregar** refeitas no estilo do jogo, com as letras A e B do Deck.
 - **16:10:** a resolução da tela do Deck (1280x800) e os vídeos cortados para 16:10.
-- **Artes da biblioteca da Steam:** capa, banner, fundo, logo e ícone do Steamdeck Version.
+- **Artes da biblioteca da Steam:** capa, banner, fundo, logo e ícone do Deckport.
 
 ## Requisitos
 
@@ -160,7 +160,7 @@ O primeiro extrai o jogo base; o segundo aplica a atualização 1.07 por cima, n
 ## Jogando
 
 - **Primeira abertura:** a tela de carregamento prepara os shaders (alguns minutos, uma vez só).
-- **Menu do port:** botão **View** (o de dois quadradinhos, à esquerda da tela). Gráficos, desempenho, controle e a
+- **Menu do Deckport:** botão **View** (o de dois quadradinhos, à esquerda da tela). Gráficos, desempenho, controle e a
   aba Extras.
 - **Botão Steam:** pausa o jogo enquanto o menu da Steam estiver aberto.
 - **Pular vídeos:** ligue em Extras > Pular vídeos (Experimental); durante um vídeo, segure o botão de menu por 1 s.
@@ -186,9 +186,9 @@ Steam.
 
 ## Créditos
 
-**Port para Steam Deck:** Kewin Lima.
+**Deckport (port para Steam Deck):** Kewin Lima.
 
-Este trabalho existe por causa destes projetos (todos GPL-2.0, como este):
+O Deckport é baseado nestes projetos (todos GPL-2.0, como este):
 
 - [iss_pc](https://github.com/HayatoG/iss_pc), de HayatoG (Guilherme): o port nativo do inFAMOUS Second Son para PC,
   incluindo o renderer v2 ([PR #402](https://github.com/HayatoG/iss_pc/pull/402)). A base de tudo aqui.
