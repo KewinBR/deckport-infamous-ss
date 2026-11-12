@@ -62,7 +62,11 @@ def patches(o):
     pelo_port = bool(o.get("lod_pelo_port", False))
     PORT_LOD.clear()
     if pelo_port:
-        PORT_LOD.update(lod_scale=1.0, lod_bands=[400.0, 750.0, 1500.0, 3500.0, 6000.0, 15000.0])
+        # lod_scale_cap: a escala é um teto (como o patch antigo, que só mexia no nível 0) e não multiplica de novo os
+        # níveis que o jogo já encurta. quality_auto_max: a qualidade automática para no nível 4 (LOD 0,6); acima
+        # disso objetos perto da câmera trocavam de modelo ou sumiam (Kewin, 2026-11-12: chegou ao nível 11).
+        PORT_LOD.update(lod_scale=1.0, lod_bands=[400.0, 750.0, 1500.0, 3500.0, 6000.0, 15000.0],
+                        lod_scale_cap=1, quality_auto_max=4)
     res = int(o.get("resolucao", 720))
     if o.get("resolucao_pelo_port", False) and res in (1200, 1000, 800, 600):
         # Saída 1280x800 (16:10) e a cena na porcentagem dela; interface 1920 de largura com a altura da proporção

@@ -2,6 +2,17 @@
 
 Formato: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/), versões em [SemVer](https://semver.org/lang/pt-BR/).
 
+## [1.0.9] - 2026-11-12
+
+### Corrigido
+- Objetos perto da câmera trocavam de modelo ou sumiam e voltavam (Kewin, no Deck). A qualidade automática subia o
+  nível de detalhe do jogo até 11 e a escala da distância de visão multiplicava todos os níveis. Agora a escala é um
+  teto (como na técnica antiga) e a qualidade automática para no nível 4. No especial de neon: média 43,8 FPS (era
+  44,2), pior janela 25,8 (era 22,5).
+
+### Adicionado
+- O menu do View mostra o ganho medido no Deck: FSR 3.1 Qualidade +2 FPS, Desempenho +5 FPS (+12%).
+
 ## [1.0.8] - 2026-11-12
 
 ### Adicionado
