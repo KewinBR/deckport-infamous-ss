@@ -47,10 +47,33 @@ def bloco(nome, linhas, ligado=True):
             f'isEnabled="{"true" if ligado else "false"}">\n    <PatchList>\n{ls}    </PatchList>\n  </Metadata>\n')
 
 
+# Chaves do tlg.ini que o port aplica sozinho: o main grava em tlg-port.ini e o rodar.sh passa pro tlg.ini.
+# Escala e faixas de LOD (lod_pelo_port): O gancho de distância do iss_pc (src/view_hook.h) só instala com a tabela de LOD e as faixas originais
+# no código do jogo; com elas no patch, a qualidade dinâmica, o FSR 3.1 e o resto do menu de LOD ficavam
+# indisponíveis (2026-11-12).
+# Resolução (resolucao_pelo_port): a resolução nativa do iss_pc (src/iss_native_resolution.h, saída 6 = 1280x800)
+# no lugar dos patches de resolução e de tela virtual, que mexiam nos mesmos trechos; é ela que deixa o FSR 3.1
+# desenhar menor e ampliar pra tela do Deck.
+PORT_LOD = {}
+
+
 def patches(o):
     out = []
-    # Resolução (v3): inicialização 0x5eff00; o bloco do Pro em 0x5f0120 vira "saída e render = LxA".
+    pelo_port = bool(o.get("lod_pelo_port", False))
+    PORT_LOD.clear()
+    if pelo_port:
+        PORT_LOD.update(lod_scale=1.0, lod_bands=[400.0, 750.0, 1500.0, 3500.0, 6000.0, 15000.0])
     res = int(o.get("resolucao", 720))
+    if o.get("resolucao_pelo_port", False) and res in (1200, 1000, 800, 600):
+        # Saída 1280x800 (16:10) e a cena na porcentagem dela; interface 1920 de largura com a altura da proporção
+        # (1920x1200, como a tela virtual do patch antigo). O FSR 3.1, quando ligado, troca a porcentagem pela dele.
+        PORT_LOD.update(iss_native_output=6, iss_native_percent={1200: 150, 1000: 125, 800: 100, 600: 75}[res],
+                        iss_native_ui_16_9=3, iss_native_hud_edges=0)
+        # Legendas: a base sai da altura da tela virtual (1200) mas o texto é desenhado numa projeção de 1080; ver o
+        # bloco "Tela virtual" abaixo. Esse trecho a resolução nativa não toca.
+        out.append(bloco("Legenda na altura 1080 (16:10)", [("0x903399", "b838040000" + "90" * 4)]))
+        res = 0
+    # Resolução (v3): inicialização 0x5eff00; o bloco do Pro em 0x5f0120 vira "saída e render = LxA".
     if res in (1200, 1000, 900, 800, 720, 600, 540):
         # 800: tela do Deck em 16:10 (1280x800), sem as barras do 16:9 (experimento: a câmera precisa
         # seguir a proporção, senão a imagem estica).
@@ -111,7 +134,13 @@ def patches(o):
         # Escala global das faixas de LOD: só metade da redução (70% -> 0.85). Com a escala cheia, objetos a poucos
         # metros ficavam na versão simplificada em lugares fechados (relato do Kewin, 2026-10-20; no Alto não acontece).
         escala = float(o.get("lod_escala", 1.0 - (1.0 - p) * 0.5))
-        linhas = [("0x11a08c0", f32(escala))]
+        linhas = []
+        if pelo_port:
+            # O port aplica a escala em todos os níveis da tabela (o patch só mexia no nível 0, o único que o
+            # jogo usava sem a qualidade dinâmica).
+            PORT_LOD["lod_scale"] = escala
+        else:
+            linhas.append(("0x11a08c0", f32(escala)))
         # Faixas longas 5 e 6 encurtadas. O corte (0x1d2e80) escolhe o LOD pela distância até a CAIXA do objeto, mas a
         # conferência do envio (0x1ec170) mede até o PIVÔ e descarta a malha se d >= s·faixa[hi+1]: peças grandes
         # como o píer do mapa novo (pivô a ~80 m com o Delsin em cima) sumiam com a faixa 6 em 6600 (A/B no mesmo
@@ -120,9 +149,15 @@ def patches(o):
         # envio: resolvido com a tabela própria do coletor abaixo (instancias_faixa6 = 10000, aprovado em 2026-10-20:
         # píer ok no ponto ruim, sessão com média de 43 FPS e ~2.300 desenhos/quadro).
         if o.get("faixa5_reduzida", True):
-            linhas.append(("0x11faa44", f32(faixa5)))
+            if pelo_port:
+                PORT_LOD["lod_bands"][4] = faixa5
+            else:
+                linhas.append(("0x11faa44", f32(faixa5)))
         if o.get("faixas_longas", True):
-            linhas.append(("0x11faa48", f32(faixa6)))
+            if pelo_port:
+                PORT_LOD["lod_bands"][5] = faixa6
+            else:
+                linhas.append(("0x11faa48", f32(faixa6)))
             if o.get("lod_envio_original", True):
                 # Limite superior da conferência do envio lê o preset sem uso 0xaab9e0 = {400, 750, 1500, 3500, 6000,
                 # 15000, 999999, ...} = faixa original deslocada de 1. rcx = tabela 0xdfaa30 (lea intacto), então
@@ -161,7 +196,8 @@ def patches(o):
                 raio = max(1000.0, float(o["horizonte_raio"]))
             k = 1.0 / max(500.0, raio * 0.3)
             linhas += [("0xd8b224", f32(raio)), ("0xd8b228", f32(k))]
-        out.append(bloco(f"Distancia de desenho {int(p * 100)}%", linhas))
+        if linhas:
+            out.append(bloco(f"Distancia de desenho {int(p * 100)}%", linhas))
     if o.get("nevoa_densa", False) and p < 0.999:
         # Constante global 100000 do HAZE_DENSITY (setter/getter dividem por ela, 0xd9adc0): 50000 dobra a
         # densidade de todos os níveis. (A versão por registrador em 0x51e2d1 deu tela preta: SD-013.)
@@ -223,6 +259,15 @@ def main():
            'editar as opções, não este arquivo. -->\n<Patch>\n' + "".join(patches(o)) + "</Patch>\n")
     open(os.path.join(pasta, "inFAMOUS.xml"), "w", encoding="utf-8").write(xml)
     open(os.path.join(pasta, "files.json"), "w", encoding="utf-8").write('{"inFAMOUS.xml": ["CUSA00004", "CUSA00223"]}')
+    ini = os.path.join(pasta, "tlg-port.ini")
+    if PORT_LOD:
+        def valor(v):
+            if isinstance(v, list):
+                return ",".join(f"{b:.0f}" for b in v)
+            return f"{v:.3f}" if isinstance(v, float) else str(v)
+        open(ini, "w", encoding="utf-8").write("".join(f"{k}={valor(v)}\n" for k, v in PORT_LOD.items()))
+    elif os.path.exists(ini):
+        os.remove(ini)
     # Ajuste do emulador (não é patch): viés de mip na configuração do jogo.
     cfg = os.path.join(pasta, "..", "..", "custom_configs", "CUSA00004.json")
     if os.path.exists(cfg):

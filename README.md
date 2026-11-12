@@ -24,6 +24,7 @@ the installer only uses the `.pkg` files you already have.
   View button.
 - Save and loading screens in the game's style, Deck A/B button glyphs.
 - Shader cache: each shader is compiled only once and kept.
+- Automatic quality (on, 30 FPS target) and FSR 3.1 upscaling (on, Quality) in the Deckport menu, Graphics tab.
 - Skip videos (experimental, off by default) and Easter Eggs (off by default): in the Deckport menu, Extras tab.
 - Automatic updates: before starting the game, the shortcut checks for a new version and updates by itself. Saves,
   shaders and settings are never deleted.

@@ -2,6 +2,22 @@
 
 Formato: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/), versões em [SemVer](https://semver.org/lang/pt-BR/).
 
+## [1.0.8] - 2026-11-12
+
+### Adicionado
+- **Qualidade automática** no menu do View (Gráficos): com a taxa de quadros abaixo do alvo, o jogo baixa o próprio
+  nível de detalhe e devolve quando sobra folga. Desligada, 30, 40, 45 ou 60 FPS; vem em 30 FPS. Na VPS, com alvo
+  60, foi de 48 para 61-65 FPS (nível 10).
+- **Upscaling FSR 3.1** no menu do View: a cena é desenhada menor e o FSR 3.1 reconstrói em 1280x800. Qualidade
+  (67%), Equilibrado (59%) e Desempenho (50%); vem em Qualidade. O ganho no Deck ainda vai ser medido.
+
+### Mudado
+- A resolução 16:10 agora é a resolução nativa do port (saída nova 1280x800, interface em 1920x1200 como antes), no
+  lugar dos patches de resolução e de tela virtual; a escala e as faixas de LOD saem do patch de distância e vão
+  pro port. Era isso que deixava a qualidade dinâmica, o FSR e os ajustes de LOD do menu avançado indisponíveis.
+- A resolução nativa e o FSR 3.1 do iss_pc passam a aceitar a versão europeia (CUSA00004 1.07, mesmo executável da
+  americana), com a mesma conferência de bytes.
+
 ## [1.0.7] - 2026-11-12
 
 ### Mudado

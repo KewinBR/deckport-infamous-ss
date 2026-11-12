@@ -59,7 +59,13 @@ e = {"resolucao": [1200, 1000, 800, 600, 800][min(4, g("gfx_resolution", 2))],  
      "ligacao_controle": True,
      "distancia": [100, 85, 70][min(2, g("gfx_distance", 2))],
      "motion_blur": bool(g("gfx_motion_blur", 0)), "reflexos": bool(g("gfx_ssr", 0)),
-     "destravar_fps": bool(g("gfx_unlock_fps", 1))}
+     "destravar_fps": bool(g("gfx_unlock_fps", 1)),
+     # Escala e faixas de LOD pelo port (tlg.ini), nao pelo patch: com o codigo do jogo original nesse trecho o
+     # port instala o gancho de distancia, e com ele a qualidade dinamica (gerar.py, PORT_LOD).
+     "lod_pelo_port": True,
+     # Resolucao 16:10 pela resolucao nativa do port (saida 1280x800), no lugar dos patches: e o que deixa o FSR 3.1
+     # desenhar menor e ampliar (gerar.py).
+     "resolucao_pelo_port": True}
 sh = min(2, g("gfx_shadows", 1))
 e["sombras_reduzidas"] = sh > 0
 if sh == 1: e.update(sombra_cascatas=3, sombra_distancia=10000)
@@ -75,6 +81,20 @@ echo "qualidade: $GERAR_EXTRA"
 if grep -qE '"resolucao": (1200|1000|800|600)[,}]' <<< "$GERAR_EXTRA"; then export TLG_VIDEO_CROP_1610=1; fi
 python3 "$app/deck/gerar.py" "$pasta"
 cp -f "$pasta/inFAMOUS.xml" "$udir/mods/steamdeck-inFAMOUS.xml"
+# Chaves do port que o gerar.py calcula (tlg-port.ini: LOD e resolucao nativa) entram no tlg.ini, por cima do que estiver la; a qualidade
+# dinamica (30 FPS) e o FSR 3.1 (Qualidade) comecam ligados se o tlg.ini ainda nao tiver as chaves (menu do View).
+python3 - "$udir/tlg.ini" "$pasta/tlg-port.ini" <<'PYEOF'
+import os, re, sys
+ini, lod = sys.argv[1], sys.argv[2]
+novo = dict(re.findall(r"^(\w+)=(\S*)", open(lod).read(), re.M)) if os.path.exists(lod) else {}
+linhas = open(ini).read().splitlines() if os.path.exists(ini) else []
+if not any(l.startswith("quality_target_fps=") for l in linhas):
+    novo["quality_target_fps"] = "30"
+if not any(l.startswith("iss_temporal=") for l in linhas):
+    novo.update(iss_temporal="1", iss_temporal_mode="1")  # FSR 3.1 no modo Qualidade (menu do View)
+fora = [l for l in linhas if l.split("=", 1)[0] not in novo]
+open(ini, "w").write("\n".join(fora + [f"{k}={v}" for k, v in novo.items()]) + "\n")
+PYEOF
 # Icones de botao do Deck (A, B, X, Y, MENU, PAD), gerados uma vez dos pacotes de texto do proprio jogo.
 [[ -d $udir/mods/steamdeck-botoes ]] || python3 "$app/deck/botoes_deck.py" "$jogo" "$udir/mods"
 
