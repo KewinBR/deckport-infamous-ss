@@ -17,6 +17,7 @@ Opções (opcoes.json), com os padrões = configuração aprovada em 2026-10-15:
   particulas_orcamento: 2000 | 256 | 128 | 64  (limite de emissores que já pararam de emitir mas ainda têm
                                             partículas vivas; acima dele os mais velhos somem; 2000 = original)
   particulas: 1.0 | 0.75 | 0.5             (multiplicador padrão de quantas partículas cada efeito solta)
+  sombra_resolucao: 2048 | 1536 | 1024 | 768 | 512  (tamanho do mapa de sombra do sol; 2048 = original)
   chuva_distancia: 10000 | 5000 | 3000   (alcance do mapa de oclusão da chuva, CSM1_RAIN_SHADOW_DISTANCE; menor =
                                             menos desenhos no passe de profundidade 1024²; 10000 = original)
   texturas: 0 | 1 | 2                       (viés de mip do emulador: original, metade, um quarto; vai pro
@@ -215,6 +216,13 @@ def patches(o):
                          [("0x11f9d24", u32(cascatas)),
                           ("0x66ea1f", "c5f057c9c5fa1010c5f2c2c801c4e3694ac010c5fa5dc2c3"),
                           ("0x11f9d1c", f32(dist))]))
+    sres = int(o.get("sombra_resolucao", 2048))
+    if sres in (1536, 1024, 768, 512):
+        # Tamanho do mapa de sombra do sol (2048² original). Três leitores no jogo inteiro (re/xref.py): 0x18f105 cria o
+        # alvo com [0xdf9d2c]; nas cascatas, 0x43ba89 lê [0xdf9d2c] e 0x43c005 lê [0xdf9d38] pro tamanho da vista de cada
+        # uma ([vista+0xa8]). A amostragem não usa o número fixo. Menos pixels por cascata: GPU mais leve, sombra mais
+        # serrilhada; a quantidade de desenhos (o custo de CPU) é a mesma.
+        out.append(bloco(f"Mapa de sombra do sol {sres}", [("0x11f9d2c", u32(sres)), ("0x11f9d38", u32(sres))]))
     chuva = float(o.get("chuva_distancia", 10000))
     if chuva < 9999:
         # float global 0xdf9d20 (va; dados) = 10000: limite de longe da única cascata do mapa de oclusão da chuva
