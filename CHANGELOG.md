@@ -2,6 +2,17 @@
 
 Formato: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/), versões em [SemVer](https://semver.org/lang/pt-BR/).
 
+## [1.0.7] - 2026-11-12
+
+### Mudado
+- Port atualizado com as correções do iss_pc de HayatoG até 07/11 (merge do ramo `developer`, 2a9aec2): tela
+  branca ao absorver um poder (#637), câmera do executável CUSA00004 1.07 (#554), vibração com limite de comandos
+  (#508) e chave de vibração no menu avançado, trackpads e vibração do Steam Deck (#723), qualidade dinâmica e
+  upscaling FSR 3.1 no renderer v2 (#725, no menu avançado), entre outras.
+- O que é do Deck continua igual: heap unificado B+C, coletor que mede só as texturas, clique dos trackpads por
+  pressão, chacoalhar do Deck, menu do View. O cache de pipelines segue ligado no Deck (o upstream passou a
+  desligar por padrão).
+
 ## [1.0.6] - 2026-11-09
 
 ### Mudado
